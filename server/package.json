@@ -1,11 +1,21 @@
 {
   "dependencies": {
-    "express": "^4.19.2",
-    "jest": "^29.7.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "express": "^4.19.2"
   },
   "devDependencies": {
-    "nyc": "^15.1.0"
-  }
+    "nodemon": "^3.1.0"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "description": "SD2024",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/sibonisonene/SDProject"
+  },
+  "author": "SD2024",
+  "license": "ISC"
 }
