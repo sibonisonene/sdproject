@@ -4,6 +4,7 @@ import './index.css';
 function App() {
   
   //Get the issues from database
+  //Used stub:
   const [issues, setIssues] = useState([
     {
       id: 1,
@@ -11,7 +12,7 @@ function App() {
       resident: 34,
       date: "23 March 2024",
       status: "pending",
-      Feedback: "",
+      Feedback: "We do not see the leak",
       Description: "There is a leak in the hallway of the 3rd floor"
     },
     {
@@ -20,13 +21,13 @@ function App() {
       resident: 34,
       date: "23 March 2024",
       status: "pending",
-      Feedback: "",
+      Feedback: "We will fix it next Month",
       Description: "One of the lights in the second elevator is not working. It keeps flashing"
     }
   ]);
 
   
-
+  //When you click status button
   const statusClick = (id) => {
     let issue;
     issues.forEach(element => {
@@ -51,6 +52,34 @@ function App() {
 
   }
 
+  //When you click Add Feedback
+  const feedbackClick = ( e) => {
+
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const formJson = Object.fromEntries(formData.entries());
+
+    let issue = Object;
+    issues.forEach(element => {
+      if(element.id ===Number(Object.keys(formJson)[0])){
+        issue = element;
+      }
+    });
+
+
+    issue.Feedback = Object.values(formJson)[0];
+    let newIssues = issues.filter(i => i.id !==Number(Object.keys(formJson)[0]));
+
+     newIssues.push(issue);
+
+     setIssues(newIssues);
+     console.log(issues);
+    
+  }
+
 
   return (
     
@@ -73,10 +102,10 @@ function App() {
               <button onClick={() => {statusClick(issue.id)}}>Change Status</button>
             </section>
             <p>Description: {issue.Description}</p>
-            <section className='Feedback'>
-              <p>{issue.Feedback}</p>
-              <button>Add Feedback</button>
-            </section>
+            <form className='Feedback' onSubmit={feedbackClick }>
+              <label>Feedback: <input name={issue.id} defaultValue={issue.Feedback}></input> </label>
+              <button type='submit'>Add Feedback</button>
+            </form>
           </section>
         })
         /* display the results (by adding the html item)*/
