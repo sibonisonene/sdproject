@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webcam Registration</title>
+</head>
+<body>
+
+<h1>Webcam Registration</h1>
+
+<div>
+  <label for="name">Name:</label>
+  <input type="text" id="name">
+</div>
+
+<div>
+  <button id="registerButton">Register</button>
+</div>
+
+<div>
+  <video id="video" width="640" height="480" autoplay></video>
+  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+</div>
+
+<script>
+// Get necessary elements
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const registerButton = document.getElementById('registerButton');
+const nameInput = document.getElementById('name');
+
+// Access the webcam
+async function initWebcam() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    video.srcObject = stream;
+  } catch (err) {
+    console.error('Error accessing webcam:', err);
+  }
+}
+
+// Initialize webcam
+initWebcam();
+
+// Register button click event
+registerButton.addEventListener('click', async () => {
+  // Ensure a name is entered
+  if (!nameInput.value.trim()) {
+    alert('Please enter your name.');
+    return;
+  }
+
+  // Draw the current video frame on the canvas
+  const context = canvas.getContext('2d');
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  // Convert canvas content to base64 data URL
+  const imageDataURL = canvas.toDataURL('image/png');
+
+  // Simulate sending the image data to a server (you would send this data to your server in a real scenario)
+  console.log('Name:', nameInput.value);
+  console.log('Image Data:', imageDataURL);
+
+  // Optional: Display the captured image on the page
+  const capturedImage = new Image();
+  capturedImage.src = imageDataURL;
+  document.body.appendChild(capturedImage);
+});
+</script>
+
+</body>
+</html>
