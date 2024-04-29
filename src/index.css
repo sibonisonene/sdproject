@@ -3,24 +3,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-/* Basic reset and full-height container setup */
-/* body,
-html {
+@keyframes slideshow {
+  0%, 19.9% {
+    background-image: url('components/images/bg1.jpg'); 
+  }
+  20%, 39.9% {
+    background-image: url('components/images/bg2.jpg'); 
+  }
+  40%, 59.9% {
+    background-image: url('components/images/bg3.jpg'); 
+  }
+  60%, 79.9% {
+    background-image: url('components/images/bg4.jpg');
+  }
+  80%, 99.9% {
+    background-image: url('components/images/bg5.jpg'); 
+  }
+  100% {
+    background-image: url('components/images/bg6.jpg'); 
+  }
+}
+
+body {
   height: 100%;
   margin: 0;
   font-family: Lato, sans-serif;
-  background-color: silver;
-} */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* animation: slideshow 48s infinite; */
+}
+
 
 body, html {
   height: 100%;
   margin: 0;
   font-family: Lato, sans-serif;
-  background-image: url(./components/images/secTitBG.jpg); /* Add your image path here */
-  background-size: cover; /* Cover the entire page */
-  background-position: center; /* Center the image on the page */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-attachment: fixed; /* Optional: this makes the background image fixed during scroll */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
 }
 
 .navbar {
@@ -31,22 +53,31 @@ body, html {
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
+  padding-bottom: 0;
+  background-color: white;
+  
 }
+
 .navbar h1 {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: Marcellus;
   font-size: 39px;
   justify-content: start;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .navbar .links {
   margin-left: auto;
   font-family: lato;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: Lato;
   font-size: 18px;
   font-weight: 400;
@@ -59,6 +90,10 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideshow 48s infinite;
 }
 
 /* Styling the form */
@@ -145,18 +180,98 @@ button:hover {
   font-size: 14px;
 }
 
-.link-to-register a {
-  text-decoration: underline;
-  color: rgb(35, 35, 35);
+.navbar-mk-admin:hover {
+  cursor: pointer;
+}
+
+/* modal */
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); 
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  z-index: 1050; 
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: whitesmoke;
+  padding: 30px;
+  border-radius: 8px; /* Soft rounded corners for a modern look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow for a pop effect */
+  width: auto; /* Width depends on content */
+  max-width: 450px;
+}
+
+.modal-close-button {
+  position:fixed;
+  display: none;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #707070;
+}
+
+.modal-close-button:hover {
+  color: blue; /* Red on hover for intuitive close action */
+}
+
+/* AddAdmin Modal Form Styling */
+.make-admin-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.make-admin-modal form {
+  width: 100%; /* Use all available space in the modal-content */
+  margin: 0;
+}
+.make-admin-modal h2 {
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+input[type="text"] {
+  width: calc(100% - 24px); /* Full width minus padding */
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 0.8px;
+  font-size: 16px; /* Larger font size for easier reading */
+}
+
+input[type="text"]:hover {
+  border-color: rgb(205,171,110);
+}
+
+.make-admin-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 0.8px;
+  cursor: pointer;
   font-family: Lato;
-  font-weight: 300;
-  margin-left: 5px;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 12px;
+  border-style: solid;
+  border-color: rgb(7, 28, 53);
+  border-width: 0.8px;
 }
 
-.link-to-register a:hover {
-  color: blue;
+.make-admin-button:hover {
+  border-color: white; /* Darker blue on hover */
 }
-
-
-

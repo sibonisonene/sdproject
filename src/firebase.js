@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFunctions, httpsCallable } from "firebase/functions";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyD7bqbBYF6vswJWTLG9TZP4du5fWwknP5g",
@@ -12,3 +14,17 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+// Initialize Cloud Functions
+const functions = getFunctions(app);
+
+// Function to add admin role to a user
+export const addAdminRole = async (email) => {
+  const addRoleFn = httpsCallable(functions, 'addAdminRole');
+  try {
+    const result = await addRoleFn({ email });
+    return result.data;
+  } catch (error) {
+    throw error;
+  }
+};

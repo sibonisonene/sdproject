@@ -1,6 +1,7 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { auth } from "../firebase";
+import { addAdminRole } from "../firebase";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -8,6 +9,9 @@ const AuthDetails = () => {
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
+        user.getIdTokenResult().then(idTokenResult => {
+          const isAdmin = idTokenResult.claims.admin
+        })
         setAuthUser(user);
       } else {
         setAuthUser(null);
@@ -27,18 +31,18 @@ const AuthDetails = () => {
       .catch((error) => console.log(error));
   };
 
-  return (
-    <div>
-      {authUser ? (
-        <>
-          <p>{`Signed In as ${authUser.email}`}</p>
-          <button onClick={userSignOut}>Sign Out</button>
-        </>
-      ) : (
-        <p>Signed Out</p>
-      )}
-    </div>
-  );
+  // return (
+  //   <div>
+  //     {authUser ? (
+  //       <>
+  //         <p>{`Signed In as ${authUser.email}`}</p>
+  //         <button onClick={userSignOut}>Sign Out</button>
+  //       </>
+  //     ) : (
+  //       <p>Signed Out</p>
+  //     )}
+  //   </div>
+  // );
 };
 
 export default AuthDetails;

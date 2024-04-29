@@ -23,7 +23,7 @@ const SignUp = () => {
   return (
     <div className="sign-in-container">
       <form onSubmit={signUp}>
-        <h1>Register</h1>
+        <h1>Register a new user</h1>
         <p>EMAIL ADDRESS *</p>
         <input
           type="email"
@@ -41,10 +41,6 @@ const SignUp = () => {
           required
         />
         <button type="submit">Register</button>
-        <div className="link-to-register">
-          Already have an account?
-          <Link to="/">Log In</Link>
-        </div>
       </form>
     </div>
   );

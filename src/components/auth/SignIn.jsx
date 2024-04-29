@@ -64,10 +64,6 @@ const SignIn = () => {
           required
         />
         <button type="submit">Log In</button>
-        <div className="link-to-register">
-          Dont have an account?
-          <Link to="/components/auth/signUp">Register</Link>
-        </div>
       </form>
       <ToastContainer className="toast" />
     </div>
