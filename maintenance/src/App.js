@@ -83,7 +83,7 @@ function App() {
 
   return (
     
-    <article className="App" data-testid="App">
+    <article className="IssuesAdmin" data-testid="IssuesAdmin">
       <h1>Issues</h1>
 
       {
@@ -98,12 +98,12 @@ function App() {
               <h4>Logged by resident: {issue.resident}</h4>
             </section>
             <section className='Status'>
-              <p>Status: {issue.status}</p>
+              <p data-testid='Status'>Status: {issue.status}</p>
               <button onClick={() => {statusClick(issue.id)}}>Change Status</button>
             </section>
             <p>Description: {issue.Description}</p>
             <form className='Feedback' onSubmit={feedbackClick }>
-              <label>Feedback: <input name={issue.id} defaultValue={issue.Feedback}></input> </label>
+              <label>Feedback: <input name={issue.id} defaultValue={issue.Feedback} data-testid='Feedback'></input> </label>
               <button type='submit'>Add Feedback</button>
             </form>
           </section>

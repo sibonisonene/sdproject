@@ -46,3 +46,7 @@
   flex-direction: row;
 }
 
+.Feedback button {
+  margin-bottom: 10px;
+}
+
