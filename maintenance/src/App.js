@@ -83,7 +83,7 @@ function App() {
 
   return (
     
-    <article className="App">
+    <article className="App" data-testid="App">
       <h1>Issues</h1>
 
       {
