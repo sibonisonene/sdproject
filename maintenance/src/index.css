@@ -50,3 +50,20 @@
   margin-bottom: 10px;
 }
 
+.FineItem {
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+}
+
+.FineItem button {
+  position: relative;
+  right: 0px;
+  padding: 10px 24px;
+  margin: auto 10px;
+  background-color: black;
+  font-size: small;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
