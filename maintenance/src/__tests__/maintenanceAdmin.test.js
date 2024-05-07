@@ -36,3 +36,6 @@ test('feebackClick_anyState_buttonClick', () => {
 
 
 //test if feedback update works
+
+
+//IMPORTANT change the import App to the component name
