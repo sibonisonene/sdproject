@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine Issuing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Fine Issuing Page</h1>
+    <form id="fine-form">
+      <label for="userId">User ID:</label>
+      <input type="text" id="userId" name="userId" required><br><br>
+      
+      <label for="amount">Fine Amount:</label>
+      <input type="number" id="amount" name="amount" required><br><br>
+
+      <label for="reason">Reason:</label>
+      <textarea id="reason" name="reason" required></textarea><br><br>
+
+      <button type="submit">Issue Fine</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
