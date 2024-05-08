@@ -26,6 +26,9 @@ const Navbar = ({ openModal }) => {
               </>
             )}
             <Link to="/components/Dashboard">Home</Link>
+            <Link to="/components/Fines">Fines</Link>
+            <Link to="/components/Issues">Issues</Link>
+            <Link to="/components/Maintenance">Maintenance</Link>
             <Link to="/" onClick={handleSignOut}>Sign Out</Link>
           </>
         ) : null}
