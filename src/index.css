@@ -275,3 +275,73 @@ input[type="text"]:hover {
 .make-admin-button:hover {
   border-color: white; /* Darker blue on hover */
 }
+
+.IssueItem {
+  border-bottom: 1px solid black;
+}
+
+.IssueHead {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.IssueItem h1 {
+  font-size: 20px;
+}
+
+.IssueItem button {
+  position: relative;
+  right: 0px;
+  padding: 10px 24px;
+  margin: auto 10px;
+  background-color: black;
+  font-size: small;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.IssueItem h3 {
+  margin-left: 10px;
+}
+
+.IssueItem h4 {
+  position:relative;
+  right: 0;
+  margin-right: 10px;
+}
+
+.Status  {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.Feedback  {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.Feedback button {
+  margin-bottom: 10px;
+}
+
+.FineItem {
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+}
+
+.FineItem button {
+  position: relative;
+  right: 0px;
+  padding: 10px 24px;
+  margin: auto 10px;
+  background-color: black;
+  font-size: small;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
