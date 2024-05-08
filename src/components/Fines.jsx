@@ -45,5 +45,4 @@ function Fines() {
     )
 
 }
-
 export default Fines;
