@@ -27,7 +27,7 @@ function Fines() {
 
 
     return (
-        <article className="Fines" data-testid="Fines">
+        <article className="Fines" data-testid="FinesRes">
             <h1>Your Fines</h1>
             {
                 fines.map((fine) => {
