@@ -15,6 +15,8 @@ import AddAdmin from "./components/auth/AddAdmin";
 import Modal from './components/Modal'; 
 import { useState } from "react";
 
+global.TextEncoder = require('util').TextEncoder;
+
 function App() {
 
   const [isAddAdminModalOpen, setAddAdminModalOpen] = useState(false);

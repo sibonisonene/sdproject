@@ -44,8 +44,6 @@ jobs:
           node-version: "20"
       - name: npm install
         run: npm install
-      - name: install jest dependencies
-        run: npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react react-test-renderer
       - name: tests
         run: npm test
 
