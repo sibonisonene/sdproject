@@ -6,6 +6,8 @@ afterEach(() => {
     cleanup();
 });
 
+global.TextEncoder = require('util').TextEncoder;
+
 //test if the componant is rendered
 test('app component should be in the document', () => {
     render(<App/>);
