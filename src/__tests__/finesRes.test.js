@@ -16,12 +16,12 @@ test('TextEncoder is globally defined in Jest', () => {
     expect(global.TextEncoder).toBeDefined();
   });
 
-// test('app component should be in the document', () => {
-//     render(<App/>);
-//     const app = screen.getByTestId('FinesRes'); //Add the data-testid='' to the component
-//     //Check if app is in the body of the document
-//     expect(app).toBeInTheDocument();
-// });
+test('app component should be in the document', () => {
+    render(<App/>);
+    const app = screen.getByTestId('FinesRes'); //Add the data-testid='' to the component
+    //Check if app is in the body of the document
+    expect(app).toBeInTheDocument();
+});
 
 
 //IMPORTANT change the import App to the component name
