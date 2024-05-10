@@ -6,6 +6,8 @@ afterEach(() => {
     cleanup();
 });
 
+global.TextEncoder = require('util').TextEncoder;
+
 //test if the componant is rendered
 //Componenet does not exist so we wont run the test
 
