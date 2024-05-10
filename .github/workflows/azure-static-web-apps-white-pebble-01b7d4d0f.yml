@@ -44,6 +44,8 @@ jobs:
           node-version: "20"
       - name: npm install
         run: npm install
+      - name: setup jest
+        run: npm jest.setup.js
       - name: tests
         run: npm test
 
