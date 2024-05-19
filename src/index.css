@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@keyframes slideshow {
+  0%, 19.9% {
+    background-image: url('components/images/bg1.jpg'); 
+  }
+  20%, 39.9% {
+    background-image: url('components/images/bg2.jpg'); 
+  }
+  40%, 59.9% {
+    background-image: url('components/images/bg3.jpg'); 
+  }
+  60%, 79.9% {
+    background-image: url('components/images/bg4.jpg');
+  }
+  80%, 99.9% {
+    background-image: url('components/images/bg5.jpg'); 
+  }
+  100% {
+    background-image: url('components/images/bg6.jpg'); 
+  }
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Lato, sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* animation: slideshow 48s infinite; */
+}
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Lato, sans-serif;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
+
+.navbar {
+  padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-bottom: 0;
+  background-color: white;
+  
+}
+
+.navbar h1 {
+  color: rgb(0, 0, 0);
+  font-family: Marcellus;
+  font-size: 39px;
+  justify-content: start;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.navbar .links {
+  margin-left: auto;
+  font-family: lato;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 6px;
+}
+
+
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideshow 48s infinite;
+}
+
+/* Styling the form */
+form {
+  background-color: white;
+  padding: 40px;
+  padding-left: 20px;
+  /* border-radius: 8px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+form p{
+    color: rgb(35, 35, 35);
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Styling the form title */
+h1 {
+  text-align: start;
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* Styling form inputs */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  /* margin-top: 15px;  */
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 0.8px;
+  border-style: solid;
+  border-color: rgb(35, 35, 35);
+  font-family: Lato;
+  font-weight: 300;
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="email"]:focus, /* Add this */
+input[type="password"]:focus {
+  /* And this */
+  border-color: rgb(
+    205,
+    171,
+    110
+  );
+}
+
+/* Styling the button */
+button {
+  width: 321.9px;
+  height: 50px;
+  padding: 10px;
+  background-color: rgb(7, 28, 53);
+  color: rgb(255, 255, 255);
+  margin-top: 50px;
+  cursor: pointer;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 12px;
+  border-style: solid;
+  border-color: rgb(7, 28, 53);
+  border-width: 0.8px;
+  /* box-shadow: 0 0 2px rgb(7, 28, 53); */
+}
+
+button:hover {
+  border-color: white;
+}
+
+.link-to-register {
+  padding-top: 20px;
+  color: rgb(35, 35, 35);
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.navbar-mk-admin:hover {
+  cursor: pointer;
+}
+
+/* modal */
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); 
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  z-index: 1050; 
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: whitesmoke;
+  padding: 30px;
+  border-radius: 8px; /* Soft rounded corners for a modern look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow for a pop effect */
+  width: auto; /* Width depends on content */
+  max-width: 450px;
+}
+
+.modal-close-button {
+  position:fixed;
+  display: none;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #707070;
+}
+
+.modal-close-button:hover {
+  color: blue; /* Red on hover for intuitive close action */
+}
+
+/* AddAdmin Modal Form Styling */
+.make-admin-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.make-admin-modal form {
+  width: 100%; /* Use all available space in the modal-content */
+  margin: 0;
+}
+.make-admin-modal h2 {
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+input[type="text"] {
+  width: calc(100% - 24px); /* Full width minus padding */
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 0.8px;
+  font-size: 16px; /* Larger font size for easier reading */
+}
+
+input[type="text"]:hover {
+  border-color: rgb(205,171,110);
+}
+
+.make-admin-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 0.8px;
+  cursor: pointer;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 12px;
+  border-style: solid;
+  border-color: rgb(7, 28, 53);
+  border-width: 0.8px;
+}
+
+.make-admin-button:hover {
+  border-color: white; /* Darker blue on hover */
+}
+
+.IssueItem {
+  border-bottom: 1px solid black;
+}
+
+.IssueHead {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.IssueItem h1 {
+  font-size: 20px;
+}
+
+.IssueItem button {
+  position: relative;
+  right: 0px;
+  padding: 10px 24px;
+  margin: auto 10px;
+  background-color: black;
+  font-size: small;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.IssueItem h3 {
+  margin-left: 10px;
+}
+
+.IssueItem h4 {
+  position:relative;
+  right: 0;
+  margin-right: 10px;
+}
+
+.Status  {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.Feedback  {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.Feedback button {
+  margin-bottom: 10px;
+}
+
+.FineItem {
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+}
+
+.FineItem button {
+  position: relative;
+  right: 0px;
+  padding: 10px 24px;
+  margin: auto 10px;
+  background-color: black;
+  font-size: small;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
