@@ -23,10 +23,12 @@ const Navbar = ({ openModal }) => {
               <>
                 <a href="#!" className="navbar-mk-admin" onClick={openModal}>Make Admin</a>
                 <Link to="/components/auth/signup" style={{ color: 'black', borderRadius: '8px' }}>Register</Link>
-                <Link to="/components/auth/RemoveUser" style={{ color: 'black', borderRadius: '8px' }}>Remove User</Link>
               </>
             )}
             <Link to="/components/Dashboard">Home</Link>
+            <Link to="/components/Fines">Fines</Link>
+            <Link to="/components/Issues">Issues</Link>
+            <Link to="/components/Maintenance">Maintenance</Link>
             <Link to="/" onClick={handleSignOut}>Sign Out</Link>
           </>
         ) : null}

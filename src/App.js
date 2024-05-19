@@ -6,12 +6,14 @@ import { AuthProvider } from "./AuthContext";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import Dashboard from "./components/Dashboard";
+import Fines from "./components/Fines";
+import Issues from "./components/Issues";
+import Maintenance from "./components/Maintenance";
 import PrivateRoute from "./PrivateRoute"; 
 import Navbar from "./components/Navbar";
 import AddAdmin from "./components/auth/AddAdmin";
 import Modal from './components/Modal'; 
 import { useState } from "react";
-import RemoveUser from "./components/auth/RemoveUser";
 
 function App() {
 
@@ -30,8 +32,10 @@ function App() {
               <SignIn />
             </Route>
             <PrivateRoute path="/components/auth/signUp" component={SignUp} isAdminRoute={true} />
-            <PrivateRoute path="/components/auth/RemoveUser" component={RemoveUser} isAdminRoute={true} />
             <PrivateRoute path="/components/Dashboard" component={Dashboard} />
+            <PrivateRoute path="/components/Fines" component={Fines}/>
+            <PrivateRoute path="/components/Issues" component={Issues}/>
+            <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>
             <AddAdmin />
