@@ -9,8 +9,9 @@ import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./PrivateRoute"; 
 import Navbar from "./components/Navbar";
 import AddAdmin from "./components/auth/AddAdmin";
-import Modal from './components/Modal'; // Adjust the path as needed
+import Modal from './components/Modal'; 
 import { useState } from "react";
+import RemoveUser from "./components/auth/RemoveUser";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
               <SignIn />
             </Route>
             <PrivateRoute path="/components/auth/signUp" component={SignUp} isAdminRoute={true} />
+            <PrivateRoute path="/components/auth/RemoveUser" component={RemoveUser} isAdminRoute={true} />
             <PrivateRoute path="/components/Dashboard" component={Dashboard} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>
