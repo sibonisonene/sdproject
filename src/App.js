@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "./AuthContext"; 
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
+import RemoveUser from "./components/auth/RemoveUser";
 import Dashboard from "./components/Dashboard";
 import Fines from "./components/Fines";
 import Issues from "./components/Issues";
@@ -32,6 +33,7 @@ function App() {
               <SignIn />
             </Route>
             <PrivateRoute path="/components/auth/signUp" component={SignUp} isAdminRoute={true} />
+            <PrivateRoute path="/components/auth/RemoveUser" component={RemoveUser} isAdminRoute={true} />
             <PrivateRoute path="/components/Dashboard" component={Dashboard} />
             <PrivateRoute path="/components/Fines" component={Fines}/>
             <PrivateRoute path="/components/Issues" component={Issues}/>
