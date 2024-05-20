@@ -102,6 +102,7 @@ form {
   /* border-radius: 8px; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
+  padding-top: 19px;
 }
 
 
@@ -123,6 +124,7 @@ h1 {
 }
 
 input[type="email"],
+input[type="tel"],
 input[type="text"],
 input[type="password"] {
   width: 100%;
@@ -374,3 +376,201 @@ input[type="text"]:hover {
     font-size: 10px;
   }
 }
+
+/* Add styling for Fines component */
+.Fines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.Fines h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.FineItem {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.FineItem h2 {
+  font-family: Marcellus;
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+}
+
+.FineItem h3 {
+  font-family: Lato;
+  font-size: 16px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+.FineItem p {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+.FineItem button {
+  width: 100px;
+  height: 40px;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: 1px solid rgb(7, 28, 53);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.FineItem button:hover {
+  background-color: white;
+  color: rgb(7, 28, 53);
+  border-color: rgb(7, 28, 53);
+}
+
+/* Add styling for Maintenance component */
+.IssuesAdmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.IssuesAdmin h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.IssueItem {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.IssueHead h2 {
+  font-family: Marcellus;
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+}
+
+.IssueHead h3 {
+  font-family: Lato;
+  font-size: 16px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+.IssueHead h4 {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+.Status p {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+}
+
+.Status button {
+  width: 150px;
+  height: 40px;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: 1px solid rgb(7, 28, 53);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.Status button:hover {
+  background-color: white;
+  color: rgb(7, 28, 53);
+  border-color: rgb(7, 28, 53);
+}
+
+.IssueItem p {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+.Feedback label {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(35, 35, 35);
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.Feedback input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 0.8px;
+  margin-top: 5px;
+}
+
+.Feedback button {
+  width: 150px;
+  height: 40px;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: 1px solid rgb(7, 28, 53);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.Feedback button:hover {
+  background-color: white;
+  color: rgb(7, 28, 53);
+  border-color: rgb(7, 28, 53);
+}
+
+

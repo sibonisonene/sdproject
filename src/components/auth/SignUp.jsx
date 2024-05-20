@@ -7,6 +7,8 @@ import useAddProfile from '../hooks/useAddProfile';
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("+27");
+  const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
   const [fullName, setFullName] = useState('');
@@ -15,7 +17,7 @@ const SignUp = () => {
 
   const signUp = (e) => {
     e.preventDefault();
-    addProfile({fullName, surname, email})
+    addProfile({fullName, surname, email, phoneNumber, address})
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
@@ -36,7 +38,7 @@ const SignUp = () => {
           placeholder="Enter your full name"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
-          //required
+          required
         />
         <p>SURNAME *</p>
         <input
@@ -44,7 +46,7 @@ const SignUp = () => {
           placeholder="Enter your surname"
           value={surname}
           onChange={(e) => setSurname(e.target.value)}
-          //required
+          required
         />
         <p>EMAIL ADDRESS *</p>
         <input
@@ -52,6 +54,22 @@ const SignUp = () => {
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <p>Phone number *</p>
+        <input
+          type="tel"
+          placeholder="Enter phone number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          required
+        />
+        <p>Address *</p>
+        <input
+          type="text"
+          placeholder="Enter address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
           required
         />
         <p>PASSWORD *</p>

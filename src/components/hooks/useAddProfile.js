@@ -9,12 +9,16 @@ const useAddProfile = () => {
         fullName,
         surname,
         email,
+        phoneNumber,
+        address,
     }) => {
         await addDoc(profileCollectionReference, {
             userID: "",
             fullName,
             surname,
             email,
+            phoneNumber,
+            address,
         })
     }
 

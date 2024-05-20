@@ -24,6 +24,7 @@ const Navbar = ({ openModal }) => {
                 <a href="#!" className="navbar-mk-admin" onClick={openModal}>Make Admin</a>
                 <Link to="/components/auth/signup" style={{ color: 'black', borderRadius: '8px' }}>Register</Link>
                 <Link to="/components/auth/RemoveUser" style={{ color: 'black', borderRadius: '8px' }}>Remove User</Link>
+                <Link to="/components/auth/EditUserInfo" style={{ color: 'black', borderRadius: '8px' }}>Edit users</Link>
               </>
             )}
             <Link to="/components/Profile">My Profile</Link>

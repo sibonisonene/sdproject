@@ -16,6 +16,7 @@ import AddAdmin from "./components/auth/AddAdmin";
 import Modal from './components/Modal'; 
 import { useState } from "react";
 import Profile from "./components/Profile";
+import EditUserInfo from "./components/auth/EditUserInfo";
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
             </Route>
             <PrivateRoute path="/components/auth/signUp" component={SignUp} isAdminRoute={true} />
             <PrivateRoute path="/components/auth/RemoveUser" component={RemoveUser} isAdminRoute={true} />
+            <PrivateRoute path="/components/auth/EditUserINfo" component={EditUserInfo} isAdminRoute={true} />
             <PrivateRoute path="/components/Dashboard" component={Dashboard} />
             <PrivateRoute path="/components/Fines" component={Fines}/>
             <PrivateRoute path="/components/Issues" component={Issues}/>
