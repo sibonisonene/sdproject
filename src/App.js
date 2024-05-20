@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "./AuthContext"; 
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
+import RemoveUser from "./components/auth/RemoveUser";
 import Dashboard from "./components/Dashboard";
 import Fines from "./components/Fines";
 import Issues from "./components/Issues";
@@ -14,6 +15,8 @@ import Navbar from "./components/Navbar";
 import AddAdmin from "./components/auth/AddAdmin";
 import Modal from './components/Modal'; 
 import { useState } from "react";
+import Profile from "./components/Profile";
+import EditUserInfo from "./components/auth/EditUserInfo";
 
 function App() {
 
@@ -32,9 +35,12 @@ function App() {
               <SignIn />
             </Route>
             <PrivateRoute path="/components/auth/signUp" component={SignUp} isAdminRoute={true} />
+            <PrivateRoute path="/components/auth/RemoveUser" component={RemoveUser} isAdminRoute={true} />
+            <PrivateRoute path="/components/auth/EditUserINfo" component={EditUserInfo} isAdminRoute={true} />
             <PrivateRoute path="/components/Dashboard" component={Dashboard} />
             <PrivateRoute path="/components/Fines" component={Fines}/>
             <PrivateRoute path="/components/Issues" component={Issues}/>
+            <PrivateRoute path="/components/Profile" component={Profile}/>
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>

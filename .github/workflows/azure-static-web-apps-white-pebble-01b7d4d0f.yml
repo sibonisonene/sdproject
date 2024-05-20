@@ -34,6 +34,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
   #Add the tests job to run the tests
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -48,6 +49,7 @@ jobs:
         run: node jest.setup.js
       - name: tests
         run: npm test
+
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
