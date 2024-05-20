@@ -1,3 +1,21 @@
+import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
+import { ref, uploadBytes } from "firebase/storage";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyD7bqbBYF6vswJWTLG9TZP4du5fWwknP5g",
+  authDomain: "auth-development-e8593.firebaseapp.com",
+  projectId: "auth-development-e8593",
+  storageBucket: "auth-development-e8593.appspot.com",
+  messagingSenderId: "609545899114",
+  appId: "1:609545899114:web:b69ddea4f37095ddc88e13"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+
 // Get necessary elements
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
@@ -40,4 +58,8 @@ registerButton.addEventListener('click', async () => {
   const capturedImage = new Image();
   capturedImage.src = imageDataURL;
   document.body.appendChild(capturedImage);
+
+  const imageRef = ref(storage, `images/${nameInput.value}.png`);
+  await uploadBytes(imageRef, capturedImage.src);
+  
 });
