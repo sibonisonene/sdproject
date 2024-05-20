@@ -13,7 +13,8 @@ import PrivateRoute from "./PrivateRoute";
 import Navbar from "./components/Navbar";
 import AddAdmin from "./components/auth/AddAdmin";
 import Modal from './components/Modal'; 
-import { useState } from "react";
+import { useState } from "react";  
+import CamRegistration from "./components/CamRegistration";
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
             <PrivateRoute path="/components/Fines" component={Fines}/>
             <PrivateRoute path="/components/Issues" component={Issues}/>
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
+            <PrivateRoute path="/components/CamRegistration" component={CamRegistration} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>
             <AddAdmin />
