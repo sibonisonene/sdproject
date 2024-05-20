@@ -13,7 +13,7 @@ const Profile = () => {
         {profile.map((prof) => {
             const {email, fullName, surname} = prof;
             return <li>
-                <h4>{fullName} {surname}</h4>
+                <h4>Welcome {fullName} {surname}</h4>
                 <p>{email}</p>
             </li>
         })}
