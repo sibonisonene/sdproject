@@ -2,10 +2,9 @@ import "../index.css";
 import { useState } from "react";
 
 function Fines() {
-
-    //Get the issues from the database
-    //Use stub
-    const[fines, setFines] = useState([
+    // Get the issues from the database
+    // Use stub data for now
+    const [fines, setFines] = useState([
         {
             id: 1,
             admin: 5,
@@ -24,25 +23,27 @@ function Fines() {
         }
     ]);
 
-
-
     return (
         <article className="Fines" data-testid="FinesRes">
             <h1>Your Fines</h1>
             {
                 fines.map((fine) => {
-                    return <section className="FineItem" key={fine.id}>
-                        <section>
-                            <h2>{fine.description}</h2>
-                            <h3>issued by: {fine.admin}</h3>
+                    const { id, admin, description, amount, status } = fine;
+                    return (
+                        <section className="FineItem" key={id}>
+                            <section>
+                                <h2>{description}</h2>
+                                <h3>Issued by: Admin {admin}</h3>
+                                <p>Amount: R{amount}</p>
+                                <p>Status: {status}</p>
+                            </section>
+                            <button>Pay</button>
                         </section>
-                        <button>Pay</button>
-                    </section>
-                   
+                    );
                 })
             }
         </article>
-    )
-
+    );
 }
+
 export default Fines;
