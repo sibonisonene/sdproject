@@ -1,11 +1,22 @@
-import AuthDetails from '../components/AuthDetails'; // Notice the slash between 'components' and 'AuthDetails'
+import React, { useState } from 'react';
+import AuthDetails from '../components/AuthDetails'; 
 
 const Dashboard = () => {
-    return (  
+  const [user, setUser] = useState(null);
+
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <AuthDetails onUserChange={setUser} />
+      {user ? (
         <div>
-            <AuthDetails />
+          <p>Welcome, {user.email}!</p>
         </div>
-    );
+      ) : (
+        <p>Please log in to see your details.</p>
+      )}
+    </div>
+  );
 };
 
 export default Dashboard;

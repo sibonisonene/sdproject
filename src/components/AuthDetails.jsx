@@ -1,46 +1,36 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { auth } from "../firebase";
-import { addAdminRole } from "../firebase";
 
-const AuthDetails = () => {
-  const [authUser, setAuthUser] = useState(null);
-
+const AuthDetails = ({ onUserChange }) => {
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
         user.getIdTokenResult().then(idTokenResult => {
-          const isAdmin = idTokenResult.claims.admin
-        })
-        setAuthUser(user);
+          const isAdmin = !!idTokenResult.claims.admin;
+          onUserChange({ ...user, isAdmin });
+        });
       } else {
-        setAuthUser(null);
+        onUserChange(null);
       }
     });
 
     return () => {
       listen();
     };
-  }, []);
+  }, [onUserChange]);
 
   const userSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log("sign out successful");
+        console.log("Sign out successful");
       })
       .catch((error) => console.log(error));
   };
 
   // return (
   //   <div>
-  //     {authUser ? (
-  //       <>
-  //         <p>{`Signed In as ${authUser.email}`}</p>
-  //         <button onClick={userSignOut}>Sign Out</button>
-  //       </>
-  //     ) : (
-  //       <p>Signed Out</p>
-  //     )}
+  //     <button onClick={userSignOut}>Sign Out</button>
   //   </div>
   // );
 };

@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar";
 import AddAdmin from "./components/auth/AddAdmin";
 import Modal from './components/Modal'; 
 import { useState } from "react";
+import Profile from "./components/Profile";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
             <PrivateRoute path="/components/Dashboard" component={Dashboard} />
             <PrivateRoute path="/components/Fines" component={Fines}/>
             <PrivateRoute path="/components/Issues" component={Issues}/>
+            <PrivateRoute path="/components/Profile" component={Profile}/>
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>

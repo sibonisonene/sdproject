@@ -123,6 +123,7 @@ h1 {
 }
 
 input[type="email"],
+input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
@@ -135,6 +136,7 @@ input[type="password"] {
 }
 
 input[type="email"]:hover,
+input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="email"]:focus,
 input[type="password"]:focus {
