@@ -15,6 +15,7 @@ import AddAdmin from "./components/auth/AddAdmin";
 import Modal from './components/Modal'; 
 import { useState } from "react";  
 import CamRegistration from "./components/CamRegistration";
+import FaceRecognition from "./components/FaceRecognition";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
             <PrivateRoute path="/components/Issues" component={Issues}/>
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
             <PrivateRoute path="/components/CamRegistration" component={CamRegistration} />
+            <PrivateRoute path="/components/FaceRecognition" component={FaceRecognition} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>
             <AddAdmin />

@@ -31,6 +31,7 @@ const Navbar = ({ openModal }) => {
             <Link to="/components/Maintenance">Maintenance</Link>
             <Link to="/" onClick={handleSignOut}>Sign Out</Link>
             <Link to="/components/CamRegistration">Cam Registration</Link>
+            <Link to="/components/FaceRecognition">Face Recognition</Link>
           </>
         ) : null}
       </div>
