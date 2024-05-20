@@ -9,6 +9,11 @@ afterEach(() => {
 //test if the componant is rendered
 //Componenet does not exist so we wont run the test
 
+//Test for the text encoder
+test('TextEncoder is globally defined in Jest', () => {
+    expect(global.TextEncoder).toBeDefined();
+  });
+
 test('app component should be in the document', () => {
     render(<App/>);
     const app = screen.getByTestId('FinesRes'); //Add the data-testid='' to the component
