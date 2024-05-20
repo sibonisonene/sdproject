@@ -1,4 +1,4 @@
-// WebcamRegistration.js
+
 import React, { useRef, useState, useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
@@ -16,7 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
-const WebcamRegistration = () => {
+const CamRegistration = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [name, setName] = useState('');
@@ -80,4 +80,4 @@ const WebcamRegistration = () => {
   );
 };
 
-export default WebcamRegistration;
+export default CamRegistration;
