@@ -25,13 +25,11 @@ const Navbar = ({ openModal }) => {
                 <Link to="/components/auth/signup" style={{ color: 'black', borderRadius: '8px' }}>Register</Link>
                 <Link to="/components/auth/RemoveUser" style={{ color: 'black', borderRadius: '8px' }}>Remove User</Link>
                 <Link to="/components/auth/EditUserInfo" style={{ color: 'black', borderRadius: '8px' }}>Edit users</Link>
+                <Link to="/components/Maintenance" style={{ color: 'black', borderRadius: '8px' }}>Maintenance</Link>
               </>
             )}
             <Link to="/components/Profile">My Profile</Link>
             <Link to="/components/Dashboard">Home</Link>
-            <Link to="/components/Fines">Fines</Link>
-            <Link to="/components/Issues">Issues</Link>
-            <Link to="/components/Maintenance">Maintenance</Link>
             <Link to="/" onClick={handleSignOut}>Sign Out</Link>
           </>
         ) : null}

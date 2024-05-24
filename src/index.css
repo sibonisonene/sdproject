@@ -573,4 +573,424 @@ input[type="text"]:hover {
   border-color: rgb(7, 28, 53);
 }
 
+/* Add styling for Dashboard component */
+.dashboard-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.dashboard-container h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.dashboard-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.dashboard-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  text-decoration: none;
+  color: rgb(35, 35, 35);
+  width: 100%;
+  max-width: 200px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dashboard-link:hover {
+  background-color: rgb(205, 171, 110);
+  border-color: rgb(205, 171, 110);
+}
+
+.link-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-image {
+  font-size: 50px; /* Adjust the size as needed */
+  margin-bottom: 10px;
+}
+
+.dashboard-link p {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Add styling for Profile component */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.profile h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.profile ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.profile-item {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-item h4 {
+  font-family: Marcellus;
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+}
+
+.profile-item p {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+/* Add styling for Issues component */
+.issues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.issues h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.issues form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.issues input,
+.issues textarea,
+.issues select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+}
+
+.issues button {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.issues button:hover {
+  background-color: rgb(205, 171, 110);
+}
+
+.issue-item {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.issue-item h2 {
+  font-family: Marcellus;
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+}
+
+.issue-item p {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+/* Add styling for Maintenance component */
+.maintenance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.maintenance h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.maintenance form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.maintenance input,
+.maintenance textarea,
+.maintenance select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+}
+
+.maintenance button {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.maintenance button:hover {
+  background-color: rgb(205, 171, 110);
+}
+
+.issue-item {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.issue-item h2 {
+  font-family: Marcellus;
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+}
+
+.issue-item p {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+.issue-item select {
+  width: auto;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+}
+
+.issue-item button {
+  padding: 5px 10px;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.issue-item button:hover {
+  background-color: rgb(205, 171, 110);
+}
+
+/* Add styling for Reports component */
+.reports {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.reports h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.report-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
+
+.report-item {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.report-item h2 {
+  font-family: Marcellus;
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+}
+
+.report-item p {
+  font-family: Lato;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  margin: 5px 0;
+}
+
+.report-item-container button {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.report-item-container button:hover {
+  background-color: rgb(205, 171, 110);
+}
+
+.forgot-password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.forgot-password-container h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.forgot-password-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.forgot-password-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+}
+
+.forgot-password-container button {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.forgot-password-container button:hover {
+  background-color: rgb(205, 171, 110);
+}
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+
+
+
+
+
+
 

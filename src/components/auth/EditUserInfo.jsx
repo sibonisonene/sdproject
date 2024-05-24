@@ -9,7 +9,7 @@ const EditUserINfo = () => {
   const { updateProfile } = useUpdateProfile();
 
   const handleUpdateProfile = async (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
     try {
       const updatedFields = {
         phoneNumber,

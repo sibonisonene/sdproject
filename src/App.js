@@ -1,46 +1,51 @@
-// App.js
-
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { AuthProvider } from "./AuthContext"; 
-import SignIn from "./components/auth/SignIn";
-import SignUp from "./components/auth/SignUp";
-import RemoveUser from "./components/auth/RemoveUser";
-import Dashboard from "./components/Dashboard";
-import Fines from "./components/Fines";
-import Issues from "./components/Issues";
-import Maintenance from "./components/Maintenance";
-import PrivateRoute from "./PrivateRoute"; 
-import Navbar from "./components/Navbar";
-import AddAdmin from "./components/auth/AddAdmin";
-import Modal from './components/Modal'; 
-import { useState } from "react";
-import Profile from "./components/Profile";
-import EditUserInfo from "./components/auth/EditUserInfo";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { AuthProvider } from './AuthContext';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
+import RemoveUser from './components/auth/RemoveUser';
+import Dashboard from './components/Dashboard';
+import Fines from './components/Fines';
+import Issues from './components/Issues';
+import Maintenance from './components/Maintenance';
+import PrivateRoute from './PrivateRoute';
+import Navbar from './components/Navbar';
+import AddAdmin from './components/auth/AddAdmin';
+import Modal from './components/Modal';
+import { useState } from 'react';
+import Profile from './components/Profile';
+import EditUserInfo from './components/auth/EditUserInfo';
+import Reports from './components/Reports';
+import ForgotPassword from './components/auth/ForgotPassword'; // Import ForgotPassword component
 
 function App() {
-
   const [isAddAdminModalOpen, setAddAdminModalOpen] = useState(false);
 
-  const openModal = () => {setAddAdminModalOpen(true)};
+  const openModal = () => {
+    setAddAdminModalOpen(true);
+  };
   const closeModal = () => setAddAdminModalOpen(false);
 
   return (
     <AuthProvider>
       <Router>
         <div className="App">
-          <Navbar openModal={openModal}/>  
+          <Navbar openModal={openModal} />
           <Switch>
             <Route exact path="/">
               <SignIn />
             </Route>
+            <Route path="/forgot-password">
+              <ForgotPassword />
+            </Route>
             <PrivateRoute path="/components/auth/signUp" component={SignUp} isAdminRoute={true} />
             <PrivateRoute path="/components/auth/RemoveUser" component={RemoveUser} isAdminRoute={true} />
-            <PrivateRoute path="/components/auth/EditUserINfo" component={EditUserInfo} isAdminRoute={true} />
+            <PrivateRoute path="/components/auth/EditUserInfo" component={EditUserInfo} isAdminRoute={true} />
             <PrivateRoute path="/components/Dashboard" component={Dashboard} />
-            <PrivateRoute path="/components/Fines" component={Fines}/>
-            <PrivateRoute path="/components/Issues" component={Issues}/>
-            <PrivateRoute path="/components/Profile" component={Profile}/>
+            <PrivateRoute path="/components/Fines" component={Fines} />
+            <PrivateRoute path="/components/Issues" component={Issues} />
+            <PrivateRoute path="/components/Reports" component={Reports} />
+            <PrivateRoute path="/components/Profile" component={Profile} />
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>

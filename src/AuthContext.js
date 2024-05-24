@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
         user.getIdTokenResult().then(idTokenResult => {
           // Include whether the user is an admin in the state
           const isAdmin = idTokenResult.claims.admin || false;
-          setAuthUser({ ...user, isAdmin });  // Spread user object and add isAdmin flag
+          setAuthUser({ ...user, isAdmin });  
         });
       } else {
         setAuthUser(null);
