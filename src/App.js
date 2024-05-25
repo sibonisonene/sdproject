@@ -17,7 +17,9 @@ import { useState } from 'react';
 import Profile from './components/Profile';
 import EditUserInfo from './components/auth/EditUserInfo';
 import Reports from './components/Reports';
-import ForgotPassword from './components/auth/ForgotPassword'; // Import ForgotPassword component
+import ForgotPassword from './components/auth/ForgotPassword'; 
+import CamRegistration from './components/CamRegistration';
+import FaceRecognition from './components/FaceRecognition';
 
 function App() {
   const [isAddAdminModalOpen, setAddAdminModalOpen] = useState(false);
@@ -49,6 +51,8 @@ function App() {
             <PrivateRoute path="/components/Profile" component={Profile} />
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
             <PrivateRoute path="/components/IssueFines" component={IssueFines} isAdminRoute={true} />
+            <PrivateRoute path="/components/CamRegistration" component={CamRegistration} isAdminRoute={true} />
+            <PrivateRoute path="/components/FaceRecognition" component={FaceRecognition} isAdminRoute={true} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>
             <AddAdmin />
