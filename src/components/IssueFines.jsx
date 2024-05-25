@@ -63,7 +63,7 @@ const IssueFines = () => {
           <div key={fine.id} className="fine-item">
             <p>Email: {fine.email}</p>
             <p>Reason: {fine.reason}</p>
-            <p>Amount: R{fine.amount}</p>
+            <p>Amount: ${fine.amount}</p>
             <p>Status: {fine.status}</p>
             <button onClick={() => handleUpdateStatus(fine.id, fine.status === 'outstanding' ? 'paid' : 'outstanding')}>
               Mark as {fine.status === 'outstanding' ? 'Paid' : 'Outstanding'}
