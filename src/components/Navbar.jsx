@@ -26,6 +26,7 @@ const Navbar = ({ openModal }) => {
                 <Link to="/components/auth/RemoveUser" style={{ color: 'black', borderRadius: '8px' }}>Remove User</Link>
                 <Link to="/components/auth/EditUserInfo" style={{ color: 'black', borderRadius: '8px' }}>Edit users</Link>
                 <Link to="/components/Maintenance" style={{ color: 'black', borderRadius: '8px' }}>Maintenance</Link>
+                <Link to="/components/IssueFines" style={{ color: 'black', borderRadius: '8px' }}>Issue Fines</Link>
               </>
             )}
             <Link to="/components/Profile">My Profile</Link>

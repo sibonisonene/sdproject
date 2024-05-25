@@ -987,6 +987,123 @@ input[type="text"]:hover {
   color: red;
 }
 
+.issue-fines-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.issue-fines-container h1,
+.issue-fines-container h2 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.issue-fines-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.issue-fines-container input,
+.issue-fines-container select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+}
+
+.issue-fines-container button {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.issue-fines-container button:hover {
+  background-color: rgb(205, 171, 110);
+}
+
+.fines-list {
+  width: 100%;
+  max-width: 800px;
+}
+
+.fine-item {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+}
+
+/* Add styling for Fines component */
+.fines-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.fines-container h1 {
+  color: rgb(35, 35, 35);
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.fines-list {
+  width: 100%;
+  max-width: 800px;
+}
+
+.fine-item {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+}
+
+.fine-item p {
+  margin: 5px 0;
+}
+
+.fine-item button {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: rgb(7, 28, 53);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.fine-item button:hover {
+  background-color: rgb(205, 171, 110);
+}
+
+
 
 
 

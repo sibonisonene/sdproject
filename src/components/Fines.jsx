@@ -1,49 +1,37 @@
-import "../index.css";
-import { useState } from "react";
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../AuthContext';
+import useGetUserFines from '../components/hooks/useGetUserFines';
+import useUpdateFine from '../components/hooks/useUpdateFine';
+import '../index.css';
 
-function Fines() {
-    // Get the issues from the database
-    // Use stub data for now
-    const [fines, setFines] = useState([
-        {
-            id: 1,
-            admin: 5,
-            resident: 18,
-            amount: 300,
-            status: "Due",
-            description: "Resident has been found smoking in a non-smoking area"
-        },
-        {
-            id: 2,
-            admin: 5,
-            resident: 18,
-            amount: 300,
-            status: "Paid",
-            description: "Resident has been found smoking in a non-smoking area"
-        }
-    ]);
+const Fines = () => {
+  const { fines } = useGetUserFines();
+  const { updateFine } = useUpdateFine();
+  const { authUser } = useContext(AuthContext);
+  
+  const handlePayFine = async (id) => {
+    await updateFine(id, { status: 'paid' });
+  };
 
-    return (
-        <article className="Fines" data-testid="FinesRes">
-            <h1>Your Fines</h1>
-            {
-                fines.map((fine) => {
-                    const { id, admin, description, amount, status } = fine;
-                    return (
-                        <section className="FineItem" key={id}>
-                            <section>
-                                <h2>{description}</h2>
-                                <h3>Issued by: Admin {admin}</h3>
-                                <p>Amount: R{amount}</p>
-                                <p>Status: {status}</p>
-                            </section>
-                            <button>Pay</button>
-                        </section>
-                    );
-                })
-            }
-        </article>
-    );
-}
+  if (!authUser) return <p>Loading...</p>;
+
+  return (
+    <div className="fines-container">
+      <h1>Your Fines</h1>
+      <div className="fines-list">
+        {fines.map((fine) => (
+          <div key={fine.id} className="fine-item">
+            <p>Reason: {fine.reason}</p>
+            <p>Amount: R{fine.amount}</p>
+            <p>Status: {fine.status}</p>
+            {fine.status === 'outstanding' && (
+              <button onClick={() => handlePayFine(fine.id)}>Pay</button>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Fines;

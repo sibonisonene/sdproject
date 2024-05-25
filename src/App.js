@@ -6,6 +6,7 @@ import SignUp from './components/auth/SignUp';
 import RemoveUser from './components/auth/RemoveUser';
 import Dashboard from './components/Dashboard';
 import Fines from './components/Fines';
+import IssueFines from './components/IssueFines';
 import Issues from './components/Issues';
 import Maintenance from './components/Maintenance';
 import PrivateRoute from './PrivateRoute';
@@ -47,6 +48,7 @@ function App() {
             <PrivateRoute path="/components/Reports" component={Reports} />
             <PrivateRoute path="/components/Profile" component={Profile} />
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
+            <PrivateRoute path="/components/IssueFines" component={IssueFines} isAdminRoute={true} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>
             <AddAdmin />
