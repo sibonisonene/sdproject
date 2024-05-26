@@ -3,6 +3,8 @@
 
 ## Available Scripts
 
+Download the project and locate the "project" directory.
+
 In the project directory, you can run:
 
 ### `npm start`
