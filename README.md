@@ -1,7 +1,14 @@
-# Running the app locally
+# Software Design Project
+## Accessing the application
+
+In order to login to the application use the following login details:
+   Username:  ahmadg0323@gmail.com
+   Password:  ICTPass3203
+
+You'll then be logged in as an admin, where then you can add Residents and other users.
 
 
-## Available Scripts
+## Running the app locally.
 
 Download the project and locate the "project" directory.
 
