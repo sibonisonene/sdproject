@@ -20,6 +20,8 @@ import Reports from './components/Reports';
 import ForgotPassword from './components/auth/ForgotPassword'; 
 import CamRegistration from './components/CamRegistration';
 import FaceRecognition from './components/FaceRecognition';
+import IssueNotification from './components/IsssueNotification';
+import ViewNotifications from './components/ViewNotifications';
 
 function App() {
   const [isAddAdminModalOpen, setAddAdminModalOpen] = useState(false);
@@ -49,10 +51,12 @@ function App() {
             <PrivateRoute path="/components/Issues" component={Issues} />
             <PrivateRoute path="/components/Reports" component={Reports} />
             <PrivateRoute path="/components/Profile" component={Profile} />
+            <PrivateRoute path="/components/ViewNotifications" component={ViewNotifications} />
             <PrivateRoute path="/components/Maintenance" component={Maintenance} isAdminRoute={true} />
             <PrivateRoute path="/components/IssueFines" component={IssueFines} isAdminRoute={true} />
             <PrivateRoute path="/components/CamRegistration" component={CamRegistration} isAdminRoute={true} />
             <PrivateRoute path="/components/FaceRecognition" component={FaceRecognition} isAdminRoute={true} />
+            <PrivateRoute path="/components/IssueNotification" component={IssueNotification} isAdminRoute={true} />
           </Switch>
           <Modal isOpen={isAddAdminModalOpen} onClose={closeModal}>
             <AddAdmin />

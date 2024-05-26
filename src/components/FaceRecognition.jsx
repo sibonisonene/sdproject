@@ -1,7 +1,9 @@
+/* global faceapi */
+
 import React, { useState, useEffect, useRef } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, listAll, getDownloadURL, getMetadata } from 'firebase/storage';
-import * as faceapi from '../face-api.min.js';
+
 
 // Firebase configuration
 const firebaseConfig = {
@@ -13,89 +15,102 @@ const firebaseConfig = {
   appId: "1:609545899114:web:b69ddea4f37095ddc88e13"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
-
 const FaceRecognition = () => {
+  const [images, setImages] = useState([]);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  const [labeledFaceDescriptors, setLabeledFaceDescriptors] = useState([]);
 
   useEffect(() => {
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+
+    const loadImages = async () => {
+      const imageListRef = ref(storage, 'images/');
+      const imageUrls = [];
+      const res = await listAll(imageListRef);
+      for (const itemRef of res.items) {
+        const url = await getDownloadURL(itemRef);
+        const metadata = await getMetadata(itemRef);
+        imageUrls.push({ url, name: metadata.name });
+      }
+      console.log('Loaded images:', imageUrls);
+      setImages(imageUrls);
+    };
+
     const loadModels = async () => {
-      await faceapi.nets.tinyFaceDetector.loadFromUri('/models');
-      await faceapi.nets.faceLandmark68Net.loadFromUri('/models');
-      await faceapi.nets.faceRecognitionNet.loadFromUri('/models');
-      await faceapi.nets.faceExpressionNet.loadFromUri('/models');
+      await Promise.all([
+        faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+        faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+        faceapi.nets.faceExpressionNet.loadFromUri('/models')
+      ]);
+      console.log('Models loaded');
     };
 
     const startVideo = () => {
       navigator.mediaDevices.getUserMedia({ video: {} })
-        .then(stream => {
+        .then((stream) => {
           videoRef.current.srcObject = stream;
+          console.log('Video started');
         })
-        .catch(err => console.error(err));
+        .catch((err) => console.error('Error accessing webcam:', err));
     };
 
-    const loadImages = async () => {
-      const imageListRef = ref(storage, 'images/');
-      const imageList = await listAll(imageListRef);
-      const labeledFaceDescriptorsPromises = imageList.items.map(async (itemRef) => {
-        const url = await getDownloadURL(itemRef);
-        const metadata = await getMetadata(itemRef);
-        const img = await faceapi.fetchImage(url);
-        const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
-        return new faceapi.LabeledFaceDescriptors(metadata.name, [detections.descriptor]);
-      });
-      return Promise.all(labeledFaceDescriptorsPromises);
-    };
-
-    const init = async () => {
-      await loadModels();
+    loadModels().then(() => {
+      loadImages();
       startVideo();
-      const labeledDescriptors = await loadImages();
-      setLabeledFaceDescriptors(labeledDescriptors);
-    };
+    });
 
-    init();
   }, []);
 
   useEffect(() => {
-    const handlePlay = async () => {
-      if (videoRef.current && labeledFaceDescriptors.length > 0) {
-        const canvas = faceapi.createCanvasFromMedia(videoRef.current);
-        canvasRef.current.append(canvas);
-        const displaySize = { width: videoRef.current.width, height: videoRef.current.height };
-        faceapi.matchDimensions(canvas, displaySize);
+    if (!videoRef.current || !canvasRef.current || images.length === 0) return;
 
-        const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6);
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
 
-        setInterval(async () => {
-          const detections = await faceapi.detectAllFaces(videoRef.current, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors();
-          const resizedDetections = faceapi.resizeResults(detections, displaySize);
-          canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+    video.addEventListener('play', async () => {
+      const displaySize = { width: video.width, height: video.height };
+      faceapi.matchDimensions(canvas, displaySize);
 
-          const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor));
-          results.forEach((result, i) => {
-            const box = resizedDetections[i].detection.box;
-            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() });
-            drawBox.draw(canvas);
-          });
-        }, 100);
-      }
-    };
+      const labeledFaceDescriptors = await Promise.all(images.map(async (image) => {
+        const img = await faceapi.fetchImage(image.url);
+        const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
+        const descriptors = [detections.descriptor];
+        return new faceapi.LabeledFaceDescriptors(image.name, descriptors);
+      }));
 
-    videoRef.current.addEventListener('play', handlePlay);
-    return () => {
-      videoRef.current && videoRef.current.removeEventListener('play', handlePlay);
-    };
-  }, [labeledFaceDescriptors]);
+      console.log('Labeled face descriptors:', labeledFaceDescriptors);
+
+      const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6);
+
+      setInterval(async () => {
+        const detections = await faceapi.detectAllFaces(video,
+          new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors();
+
+        console.log('Detections:', detections);
+
+        const resizedDetections = faceapi.resizeResults(detections, displaySize);
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor));
+        console.log('Results:', results);
+
+        results.forEach((result, i) => {
+          const box = resizedDetections[i].detection.box;
+          const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() });
+          drawBox.draw(canvas);
+        });
+      }, 100);
+    });
+
+  }, [images]);
 
   return (
-    <div>
-      <video ref={videoRef} width="720" height="560" autoPlay muted />
-      <div ref={canvasRef}></div>
+    <div className="face-recognition-container">
+      <video id="video" className="face-recognition-video" width="1000" height="720" autoPlay muted ref={videoRef}></video>
+      <canvas ref={canvasRef} className="face-recognition-canvas"></canvas>
     </div>
   );
 };

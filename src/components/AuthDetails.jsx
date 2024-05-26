@@ -10,8 +10,8 @@ const AuthDetails = ({ onUserChange }) => {
       if (user) {
         const token = await requestNotificationPermission();
         const userDoc = {
-          email: user.email.toLowerCase(), // Ensure email is stored in lowercase
-          fcmToken: token || "" // Set fcmToken, even if it's an empty string
+          email: user.email.toLowerCase(), 
+          fcmToken: token || "" 
         };
         await setDoc(doc(db, 'Users', user.uid), userDoc, { merge: true });
 

@@ -574,6 +574,7 @@ input[type="text"]:hover {
 }
 
 /* Add styling for Dashboard component */
+
 .dashboard-wrapper {
   width: 100%;
   display: flex;
@@ -635,7 +636,7 @@ input[type="text"]:hover {
 }
 
 .link-image {
-  font-size: 50px; /* Adjust the size as needed */
+  font-size: 50px; 
   margin-bottom: 10px;
 }
 
@@ -645,6 +646,57 @@ input[type="text"]:hover {
   font-weight: 700;
   margin: 0;
 }
+
+.dashboard-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.welcome-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.dashboard-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dashboard-link {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-image {
+  font-size: 40px;
+}
+
+.link-content p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+
 
 /* Add styling for Profile component */
 .profile {
@@ -1171,6 +1223,130 @@ input[type="text"]:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.face-recognition-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.face-recognition-video, .face-recognition-canvas {
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.face-recognition-video {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+}
+
+.face-recognition-canvas {
+  position: absolute;
+}
+
+.fines-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.fines-list {
+  margin-top: 20px;
+}
+
+.fine-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: rgb(7, 28, 53);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  border-color: rgb(7, 28, 53);
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 12px;
+  border-style: solid;
+  border-color: rgb(7, 28, 53);
+  border-width: 0.8px;
+}
+
+button:hover {
+  border-color: white;
+}
+
+.notification-container, .notifications-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.notification-container form, .notifications-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-container label, .notifications-container label {
+  margin-top: 10px;
+}
+
+.notification-container input, .notifications-container input,
+.notification-container textarea, .notifications-container textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.notification-container button, .notifications-container button {
+  background-color: rgb(7, 28, 53);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.notification-container button:hover, .notifications-container button:hover {
+  background-color: rgb(7, 28, 53);
+}
+
+.notifications-list {
+  margin-top: 20px;
+}
+
+.notification-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+
+
 
 
 

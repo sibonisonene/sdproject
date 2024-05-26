@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onClose, children }) => {
           {children}
         </div>
       </div>,
-      document.getElementById('modal-root') // Ensure this ID matches the one in your index.html
+      document.getElementById('modal-root') 
     );
 };
 

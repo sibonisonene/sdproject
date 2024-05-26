@@ -15,7 +15,7 @@ const Navbar = ({ openModal }) => {
 
   return (
     <nav className="navbar">
-      <h1>Sectional Titles</h1>
+      <h1>NexTitle</h1>
       <div className="links">
         {authUser ? (
           <>
@@ -27,10 +27,10 @@ const Navbar = ({ openModal }) => {
                 <Link to="/components/auth/EditUserInfo" style={{ color: 'black', borderRadius: '8px' }}>Edit users</Link>
                 <Link to="/components/Maintenance" style={{ color: 'black', borderRadius: '8px' }}>Maintenance</Link>
                 <Link to="/components/IssueFines" style={{ color: 'black', borderRadius: '8px' }}>Issue Fines</Link>
-                <Link to="/components/CamRegistration" style={{ color: 'black', borderRadius: '8px' }}>Face Reg</Link>
+                <Link to="/components/IssueNotification" style={{ color: 'black', borderRadius: '8px' }}>Issue Notice</Link>
+        
               </>
             )}
-            <Link to="/components/Profile">My Profile</Link>
             <Link to="/components/Dashboard">Home</Link>
             <Link to="/" onClick={handleSignOut}>Sign Out</Link>
           </>
