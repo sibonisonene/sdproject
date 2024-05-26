@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth, db } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useHistory } from "react-router-dom";
-import { setDoc, doc } from 'firebase/firestore'; // Import Firestore methods
+import { setDoc, doc } from 'firebase/firestore'; 
 import useAddProfile from '../hooks/useAddProfile';
 
 const SignUp = () => {
