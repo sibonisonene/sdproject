@@ -6,7 +6,6 @@ In order to login to the application use the following login details:
    Password for both is test1234
 
 You'll then be logged in as an admin, where then you can add Residents and other users.
-
 ## Running the app locally.
 Download the project and locate the "project" directory.
 
