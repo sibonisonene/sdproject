@@ -1,6 +1,5 @@
 # Software Design Project
 ## Accessing the application
-
 In order to login to the application use the following login details:
    The username for admin is ahmad@admin.com
    Username for resident is ahmad@notadmin.com
